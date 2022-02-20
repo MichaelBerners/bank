@@ -1,0 +1,23 @@
+spring:
+  #main:
+    #web-application-type: none
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: root
+    password: 111
+    url: jdbc:postgresql://localhost:5431/bank
+
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+
+
+
+
+
+
+
+
