@@ -1,4 +1,4 @@
-package ru.belonogov.bank.models;
+package ru.belonogov.bank.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

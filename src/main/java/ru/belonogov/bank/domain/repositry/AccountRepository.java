@@ -1,9 +1,9 @@
-package ru.belonogov.bank.repositry;
+package ru.belonogov.bank.domain.repositry;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import ru.belonogov.bank.models.Account;
+import ru.belonogov.bank.domain.entity.Account;
 
 import java.util.Optional;
 

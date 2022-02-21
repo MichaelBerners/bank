@@ -2,9 +2,9 @@ package ru.belonogov.bank.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.belonogov.bank.exception.AccountNumberNotFound;
-import ru.belonogov.bank.models.Account;
-import ru.belonogov.bank.repositry.AccountRepository;
+import ru.belonogov.bank.domain.exception.AccountNumberNotFound;
+import ru.belonogov.bank.domain.entity.Account;
+import ru.belonogov.bank.domain.repositry.AccountRepository;
 import ru.belonogov.bank.service.AccountService;
 
 @Service
@@ -14,7 +14,7 @@ public class AccountServiceImpl implements AccountService {
     AccountRepository accountRepository;
 
     @Override
-    public void create(Account account) {
+    public void save(Account account) {
         accountRepository.save(account);
     }
 
@@ -25,7 +25,7 @@ public class AccountServiceImpl implements AccountService {
 
 
     @Override
-    public Account readAccountNumber(Long number) throws AccountNumberNotFound {
+    public Account findByAccountNumber(Long number) throws AccountNumberNotFound {
         return accountRepository.findAccountByAccountNumber(number)
                 .orElseThrow(() -> new AccountNumberNotFound());
         //return accountRepository.readAccountNumber(number);

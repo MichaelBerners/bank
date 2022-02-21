@@ -1,4 +1,4 @@
-package ru.belonogov.bank.models;
+package ru.belonogov.bank.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Getter @Setter
 @AllArgsConstructor

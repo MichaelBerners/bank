@@ -1,10 +1,8 @@
 package ru.belonogov.bank.service.implJdbc;
 
-import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Service;
-import ru.belonogov.bank.models.Client;
+import ru.belonogov.bank.domain.entity.Client;
 import ru.belonogov.bank.service.ClientService;
 
 import java.sql.ResultSet;

@@ -5,10 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.belonogov.bank.exception.TransactionException;
+import ru.belonogov.bank.domain.exception.TransactionException;
 import ru.belonogov.bank.service.TransactionService;
-
-import javax.validation.constraints.Positive;
 
 @AllArgsConstructor
 @RestController

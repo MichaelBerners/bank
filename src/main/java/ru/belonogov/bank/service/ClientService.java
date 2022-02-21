@@ -1,6 +1,6 @@
 package ru.belonogov.bank.service;
 
-import ru.belonogov.bank.models.Client;
+import ru.belonogov.bank.domain.entity.Client;
 import java.util.List;
 
 public interface ClientService {

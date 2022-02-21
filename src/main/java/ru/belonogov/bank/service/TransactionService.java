@@ -1,6 +1,6 @@
 package ru.belonogov.bank.service;
 
-import ru.belonogov.bank.exception.TransactionException;
+import ru.belonogov.bank.domain.exception.TransactionException;
 
 public interface TransactionService {
 

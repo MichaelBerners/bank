@@ -1,17 +1,15 @@
 package ru.belonogov.bank.service;
 
-import ru.belonogov.bank.exception.AccountNumberNotFound;
-import ru.belonogov.bank.models.Account;
-
-import java.nio.channels.AcceptPendingException;
+import ru.belonogov.bank.domain.exception.AccountNumberNotFound;
+import ru.belonogov.bank.domain.entity.Account;
 
 public interface AccountService {
 
-    void create(Account account);
+    void save(Account account);
 
-    Account read(Long id);
+    Account read(Long id); //findById
 
-    Account readAccountNumber(Long number) throws AccountNumberNotFound;
+    Account findByAccountNumber(Long number) throws AccountNumberNotFound;
 
     boolean update(Long id, Account account);
 

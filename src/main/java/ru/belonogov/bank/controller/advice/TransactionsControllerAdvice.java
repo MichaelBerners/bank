@@ -4,8 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import ru.belonogov.bank.exception.AccountNumberNotFound;
-import ru.belonogov.bank.exception.TransactionException;
+import ru.belonogov.bank.domain.exception.AccountNumberNotFound;
+import ru.belonogov.bank.domain.exception.TransactionException;
 
 @RestControllerAdvice
 public class TransactionsControllerAdvice {
