@@ -14,18 +14,18 @@ public class AccountServiceImpl implements AccountService {
     AccountRepository accountRepository;
 
     @Override
-    public void save(Account account) {
-        accountRepository.save(account);
+    public Account save(Account account) {
+       return accountRepository.save(account);
     }
 
     @Override
     public Account read(Long id) {
-        return accountRepository.findById(id).orElseThrow();
+        return accountRepository.findById(id).orElseThrow(() -> new RuntimeException());
     }
 
 
     @Override
-    public Account findByAccountNumber(Long number) throws AccountNumberNotFound {
+    public Account findByAccountNumber(Long number) {
         return accountRepository.findAccountByAccountNumber(number)
                 .orElseThrow(() -> new AccountNumberNotFound());
         //return accountRepository.readAccountNumber(number);

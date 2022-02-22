@@ -1,8 +1,9 @@
 package ru.belonogov.bank.service;
 
-import ru.belonogov.bank.domain.exception.TransactionException;
+import ru.belonogov.bank.domain.TransactionRequest;
+import ru.belonogov.bank.domain.TransactionResponse;
 
 public interface TransactionService {
 
-    void transaction(Long debitor, Long kreditor, Long amount) throws Exception;
+    TransactionResponse transaction(TransactionRequest transactionRequest);
 }

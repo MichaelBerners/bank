@@ -1,25 +1,32 @@
 package ru.belonogov.bank.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import ru.belonogov.bank.domain.exception.TransactionException;
+import org.springframework.web.bind.annotation.*;
+import ru.belonogov.bank.domain.TransactionRequest;
+import ru.belonogov.bank.domain.TransactionResponse;
 import ru.belonogov.bank.service.TransactionService;
+import javax.validation.Valid;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/transaction")
+@RequestMapping("/transactions")
 public class TransactionsController {
 
-    TransactionService transactionService;
+    private final TransactionService transactionService;
 
-    @GetMapping("/{a}/{b}/{c}")
+    @PostMapping
+    public TransactionResponse create(@RequestBody @Valid TransactionRequest transactionRequest) {
+
+        final TransactionResponse response = transactionService.transaction(transactionRequest);
+        return response;
+
+    }
+
+    /*@GetMapping("/{a}/{b}/{c}")
     void setTransaction(@PathVariable("a") Long debitor,
                         @PathVariable("b") Long creditor,
                         @PathVariable("c") Long amount) throws Exception {
 
         transactionService.transaction(debitor, creditor, amount);
-    }
+    }*/
 }

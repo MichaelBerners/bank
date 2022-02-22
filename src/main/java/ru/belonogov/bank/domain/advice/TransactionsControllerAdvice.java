@@ -1,6 +1,7 @@
-package ru.belonogov.bank.controller.advice;
+package ru.belonogov.bank.domain.advice;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -21,4 +22,9 @@ public class TransactionsControllerAdvice {
         return "Account Number Not Found";
     }
 
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String notValid(MethodArgumentNotValidException e) {
+        return "Not valid amount";
+    }
 }

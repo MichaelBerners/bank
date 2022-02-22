@@ -5,11 +5,11 @@ import ru.belonogov.bank.domain.entity.Account;
 
 public interface AccountService {
 
-    void save(Account account);
+    Account save(Account account);
 
     Account read(Long id); //findById
 
-    Account findByAccountNumber(Long number) throws AccountNumberNotFound;
+    Account findByAccountNumber(Long number);
 
     boolean update(Long id, Account account);
 

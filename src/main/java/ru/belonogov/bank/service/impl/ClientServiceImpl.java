@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import ru.belonogov.bank.domain.entity.Client;
 import ru.belonogov.bank.domain.repositry.ClientRepository;
 import ru.belonogov.bank.service.ClientService;
-
 import java.util.List;
 
 @Service

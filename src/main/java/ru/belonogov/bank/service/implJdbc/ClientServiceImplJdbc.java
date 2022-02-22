@@ -4,7 +4,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import ru.belonogov.bank.domain.entity.Client;
 import ru.belonogov.bank.service.ClientService;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;

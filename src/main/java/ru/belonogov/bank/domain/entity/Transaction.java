@@ -1,15 +1,11 @@
 package ru.belonogov.bank.domain.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Getter @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 @Entity
 @Table(name = "transaction")
 public class Transaction {

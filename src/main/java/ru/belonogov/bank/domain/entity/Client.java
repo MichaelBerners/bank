@@ -1,10 +1,8 @@
 package ru.belonogov.bank.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "clients")
-@Getter @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class Client {
 
     @Id
@@ -34,7 +30,6 @@ public class Client {
     @Column(name = "password")
     private String password;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Account> accounts = new ArrayList<>();
 }

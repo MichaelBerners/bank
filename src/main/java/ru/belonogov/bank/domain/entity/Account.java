@@ -1,15 +1,14 @@
 package ru.belonogov.bank.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
-@Getter @Setter
+
+@Data
 @Entity
 @Table(name = "account")
 public class Account {
@@ -22,20 +21,24 @@ public class Account {
     @Column(name = "amount")
     private Long amount;
 
-
     @ManyToOne
     @JoinColumn(name = "client_id")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Client client;
-
 
     @Column(name = "account_number")
     Long accountNumber;
 
-    @JsonIgnore
+    //@JsonIgnore
     @OneToMany(mappedBy = "debitor")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     List<Transaction> debitor = new ArrayList<>();
 
-    @JsonIgnore
+    //@JsonIgnore
     @OneToMany(mappedBy = "kreditor")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     List<Transaction> kreditor = new ArrayList<>();
 }
