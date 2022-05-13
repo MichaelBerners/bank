@@ -4,7 +4,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.belonogov.bank.domain.entity.Client;
+import ru.belonogov.bank.domain.mapper.ClientRespMapper;
 import ru.belonogov.bank.domain.repositry.ClientRepository;
+import ru.belonogov.bank.domain.request.ClientRequest;
+import ru.belonogov.bank.domain.response.ClientResponse;
 import ru.belonogov.bank.service.ClientService;
 import java.util.List;
 
@@ -13,10 +16,18 @@ import java.util.List;
 public class ClientServiceImpl implements ClientService {
 
     private ClientRepository clientRepository;
+    private ClientRespMapper clientRespMapper;
 
     @Override
-    public void create(Client client) {
-        clientRepository.save(client);
+    public ClientResponse create(ClientRequest clientRequest) {
+        final Client client = new Client();
+        client.setFirstName(clientRequest.getFirstName());
+        client.setLastName(clientRequest.getLastName());
+        client.setEmail(clientRequest.getEmail());
+        client.setPassword(clientRequest.getPassword());
+        final Client saveClient = clientRepository.save(client);
+
+        return clientRespMapper.toClientResp(saveClient);
     }
 
     @Override

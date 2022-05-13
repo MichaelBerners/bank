@@ -1,7 +1,8 @@
-package ru.belonogov.bank.domain;
+package ru.belonogov.bank.domain.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
+import ru.belonogov.bank.domain.response.TransactionResponse;
 import ru.belonogov.bank.domain.entity.Transaction;
 
 @Mapper(componentModel = "spring")

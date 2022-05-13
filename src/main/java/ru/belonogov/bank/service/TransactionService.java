@@ -1,7 +1,7 @@
 package ru.belonogov.bank.service;
 
-import ru.belonogov.bank.domain.TransactionRequest;
-import ru.belonogov.bank.domain.TransactionResponse;
+import ru.belonogov.bank.domain.request.TransactionRequest;
+import ru.belonogov.bank.domain.response.TransactionResponse;
 
 public interface TransactionService {
 

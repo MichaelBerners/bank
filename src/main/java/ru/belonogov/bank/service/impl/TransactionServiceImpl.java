@@ -3,9 +3,9 @@ package ru.belonogov.bank.service.impl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.belonogov.bank.domain.TransactionRequest;
-import ru.belonogov.bank.domain.TransactionRespMapper;
-import ru.belonogov.bank.domain.TransactionResponse;
+import ru.belonogov.bank.domain.request.TransactionRequest;
+import ru.belonogov.bank.domain.mapper.TransactionRespMapper;
+import ru.belonogov.bank.domain.response.TransactionResponse;
 import ru.belonogov.bank.domain.exception.TransactionException;
 import ru.belonogov.bank.domain.entity.Account;
 import ru.belonogov.bank.domain.entity.Transaction;
@@ -51,9 +51,9 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setDate(timestamp);
 
 
-        final Transaction tr = transactionRepository.save(transaction);
+        final Transaction saveTransaction = transactionRepository.save(transaction);
 
-        return transactionRespMapper.toTransactionResp(tr);
+        return transactionRespMapper.toTransactionResp(saveTransaction);
 
     }
 }

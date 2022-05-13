@@ -1,4 +1,4 @@
-package ru.belonogov.bank.domain;
+package ru.belonogov.bank.domain.response;
 
 import lombok.Data;
 import java.sql.Timestamp;

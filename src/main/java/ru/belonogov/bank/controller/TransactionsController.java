@@ -2,8 +2,8 @@ package ru.belonogov.bank.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.belonogov.bank.domain.TransactionRequest;
-import ru.belonogov.bank.domain.TransactionResponse;
+import ru.belonogov.bank.domain.request.TransactionRequest;
+import ru.belonogov.bank.domain.response.TransactionResponse;
 import ru.belonogov.bank.service.TransactionService;
 import javax.validation.Valid;
 

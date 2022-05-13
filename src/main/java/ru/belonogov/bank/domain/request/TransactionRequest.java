@@ -1,4 +1,4 @@
-package ru.belonogov.bank.domain;
+package ru.belonogov.bank.domain.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

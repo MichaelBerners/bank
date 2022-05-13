@@ -1,11 +1,14 @@
 package ru.belonogov.bank.service;
 
 import ru.belonogov.bank.domain.entity.Client;
+import ru.belonogov.bank.domain.request.ClientRequest;
+import ru.belonogov.bank.domain.response.ClientResponse;
+
 import java.util.List;
 
 public interface ClientService {
 
-    void create(Client client);
+    ClientResponse create(ClientRequest clientRequest);
 
     Client read(Long id);
 
